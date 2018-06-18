@@ -3,27 +3,28 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "fe-erp-dev2": {
+    "hisysmc": {
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "fe-client/legislations/in/clients/hisysmc",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "hisysmc",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/fe-erp-dev2",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/hisysmc",
+            "index": "fe-client/legislations/in/clients/hisysmc/index.html",
+            "main": "fe-client/base/scripts/main.ts",
+            "polyfills": "fe-client/base/scripts/polyfills.ts",
+            "tsConfig": "fe-client/legislations/in/clients/hisysmc/configs/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "fe-client/legislations/in/clients/hisysmc/assets",
+              "fe-client/legislations/in/clients/hisysmc/favicon.ico"
             ],
             "styles": [
-              "src/styles.css"
+              "fe-client/base/styles/app-global-styles.css",
+              "fe-client/legislations/in/clients/hisysmc/styles/client-global-styles.css"
             ],
             "scripts": []
           },
@@ -31,8 +32,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "fe-client/base/environments/environment.ts",
+                  "with": "fe-client/base/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -50,43 +51,44 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fe-erp-dev2:build"
+            "browserTarget": "hisysmc:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fe-erp-dev2:build:production"
+              "browserTarget": "hisysmc:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fe-erp-dev2:build"
+            "browserTarget": "hisysmc:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
+            "main": "fe-client/base/scripts/test.ts",
+            "polyfills": "fe-client/base/scripts/polyfills.ts",
+            "tsConfig": "fe-client/legislations/in/clients/hisysmc/tsconfig.spec.json",
+            "karmaConfig": "fe-client/base/scripts/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+              "fe-client/legislations/in/clients/hisysmc/assets",
+              "fe-client/legislations/in/clients/hisysmc/favicon.ico"
+            ],
+            "styles": [
+              "fe-client/base/styles/app-global-styles.css",
+              "fe-client/legislations/in/clients/hisysmc/styles/client-global-styles.css"
+            ],
+            "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "fe-client/legislations/in/clients/hisysmc/tsconfig.app.json",
+              "fe-client/legislations/in/clients/hisysmc/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -95,7 +97,7 @@
         }
       }
     },
-    "fe-erp-dev2-e2e": {
+    "hisysmc-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +105,132 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "fe-erp-dev2:serve"
+            "devServerTarget": "hisysmc:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "fe-erp-dev2:serve:production"
+              "devServerTarget": "hisysmc:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "shopclues": {
+      "root": "",
+      "sourceRoot": "fe-client/legislations/in/clients/shopclues",
+      "projectType": "application",
+      "prefix": "shopclues",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/shopclues",
+            "index": "fe-client/legislations/in/clients/shopclues/index.html",
+            "main": "fe-client/base/scripts/main.ts",
+            "polyfills": "fe-client/base/scripts/polyfills.ts",
+            "tsConfig": "fe-client/legislations/in/clients/shopclues/configs/tsconfig.app.json",
+            "assets": [
+              "fe-client/legislations/in/clients/shopclues/assets",
+              "fe-client/legislations/in/clients/shopclues/favicon.ico"
+            ],
+            "styles": [
+              "fe-client/base/styles/app-global-styles.css",
+              "fe-client/legislations/in/clients/shopclues/styles/client-global-styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "fe-client/base/environments/environment.ts",
+                  "with": "fe-client/base/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "shopclues:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "shopclues:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "shopclues:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "fe-client/base/scripts/test.ts",
+            "polyfills": "fe-client/base/scripts/polyfills.ts",
+            "tsConfig": "fe-client/legislations/in/clients/shopclues/tsconfig.spec.json",
+            "karmaConfig": "fe-client/base/scripts/karma.conf.js",
+            "assets": [
+              "fe-client/legislations/in/clients/shopclues/assets",
+              "fe-client/legislations/in/clients/shopclues/favicon.ico"
+            ],
+            "styles": [
+              "fe-client/base/styles/app-global-styles.css",
+              "fe-client/legislations/in/clients/shopclues/styles/client-global-styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "fe-client/legislations/in/clients/shopclues/tsconfig.app.json",
+              "fe-client/legislations/in/clients/shopclues/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "shopclues-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "shopclues:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shopclues:serve:production"
             }
           }
         },
@@ -123,5 +246,5 @@
       }
     }
   },
-  "defaultProject": "fe-erp-dev2"
+  "defaultProject": "shopclues"
 }
