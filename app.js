@@ -12,27 +12,30 @@ var clientIdentifier;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use('/client/:id', function(req,res,next){
-  console.log(path.join(__dirname, 'dist/' + clientIdentifier))
+/* app.use('/client/:id', function(req,res,next){
+  //console.log(path.join(__dirname, 'dist/' + clientIdentifier))
   if(req.params.id){
     console.log(req.params.id)
     clientIdentifier = req.params.id;
   }
-
+  console.log(path.join(__dirname, 'dist/' + clientIdentifier))
   app.use('/',express.static(path.join(__dirname, 'dist/' + clientIdentifier)));
-  app.use('/client'+clientIdentifier, express.static(path.join(__dirname, 'dist/' + clientIdentifier)));
+   app.use('/client'+clientIdentifier, express.static(path.join(__dirname, 'dist/' + clientIdentifier)));
 
   next();
-})
+}) */
+app.use('/',express.static(path.join(__dirname, 'dist/hisysmc')))
+app.use('/hisysmc', express.static(path.join(__dirname, 'dist/hisysmc')));
+app.use('/shopclues', express.static(path.join(__dirname, 'dist/shopclues')));
 
 app.use('/api', book);
 
 //main get Route 
-app.get('/client/:id', function(req,res,next){
+/* app.get('/client/:id', function(req,res,next){
   //console.log(clientIdentifier)
-  res.sendFile(path.join(__dirname, 'dist/' + clientIdentifier + "/index.html"))
+  res.sendFile("index.html")
   //res.send("pppp")
-})
+}) */
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
