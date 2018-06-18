@@ -12,7 +12,7 @@ import { APP_BASE_HREF, Location } from '@angular/common';
   imports: [
     BrowserModule
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: window['_app_base'] || '/' }],
+  providers: [],
   bootstrap: [
     AppComponent
   ]
